@@ -11,7 +11,6 @@ type GameId = 'binary-guessing' | 'game2' | 'game3' | 'game4' | 'game5' | 'game6
 
 function App() {
   const [currentGame, setCurrentGame] = useState<GameId>(null)
-  const [currentTestGame, setCurrentTestGame] = useState<null>(null)
 
   const handleSelectGame = (gameId: GameId) => {
     setCurrentGame(gameId)

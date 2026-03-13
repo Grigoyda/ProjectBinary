@@ -22,8 +22,8 @@ export function Game3({ onBackToMenu }: Game3Props) {
     return num.toString(base).toUpperCase()
   }
 
-  // Конвертация из указанной системы в десятичное
-  const baseToDecimal = (num: string, base: BaseSystem): number => {
+  // Конвертация из указанной системы в десятичное (пока не используется)
+  const _baseToDecimal = (num: string, base: BaseSystem): number => {
     return parseInt(num, base)
   }
 
@@ -32,8 +32,8 @@ export function Game3({ onBackToMenu }: Game3Props) {
     return num.toString(2)
   }
 
-  // Конвертация двоичного в десятичное
-  const binaryToDecimal = (binary: string): number => {
+  // Конвертация двоичного в десятичное (пока не используется)
+  const _binaryToDecimal = (binary: string): number => {
     return parseInt(binary, 2)
   }
 

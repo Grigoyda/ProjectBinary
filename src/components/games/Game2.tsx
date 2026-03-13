@@ -20,10 +20,6 @@ export function Game2({ onBackToMenu }: Game2Props) {
     return num.toString(2)
   }
 
-  // Конвертация двоичного в десятичное
-  const binaryToDecimal = (binary: string): number => {
-    return parseInt(binary, 2)
-  }
 
   // Генерация нового вопроса
   const generateQuestion = useCallback(() => {

@@ -12,7 +12,7 @@ export function Game5({ onBackToMenu }: Game5Props) {
   const [num2, setNum2] = useState<string>('')
   const [system1, setSystem1] = useState<NumberSystem>(2)
   const [system2, setSystem2] = useState<NumberSystem>(10)
-  const [userChoice, setUserChoice] = useState<'greater' | 'less' | 'equal' | null>(null)
+  const [_userChoice, setUserChoice] = useState<'greater' | 'less' | 'equal' | null>(null)
   const [correctAnswer, setCorrectAnswer] = useState<'greater' | 'less' | 'equal'>('greater')
   const [result, setResult] = useState<'correct' | 'incorrect' | null>(null)
   const [score, setScore] = useState({ correct: 0, incorrect: 0 })

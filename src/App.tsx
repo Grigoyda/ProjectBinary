@@ -6,52 +6,19 @@ import { Game3 } from './components/games/Game3'
 import { Game4 } from './components/games/Game4'
 import { Game5 } from './components/games/Game5'
 import { Game6 } from './components/games/Game6'
-import { TestGamesSelector } from './components/games/test/TestGamesSelector'
-import type { TestGameId } from './components/games/test/TestGamesSelector'
-import { TestGame1 } from './components/games/test/TestGame1'
-import { TestGame2 } from './components/games/test/TestGame2'
-import { TestGame3 } from './components/games/test/TestGame3'
 
-type GameId = 'binary-guessing' | 'game2' | 'game3' | 'game4' | 'game5' | 'game6' | 'test-games' | null
+type GameId = 'binary-guessing' | 'game2' | 'game3' | 'game4' | 'game5' | 'game6' | null
 
 function App() {
   const [currentGame, setCurrentGame] = useState<GameId>(null)
-  const [currentTestGame, setCurrentTestGame] = useState<TestGameId | null>(null)
+  const [currentTestGame, setCurrentTestGame] = useState<null>(null)
 
   const handleSelectGame = (gameId: GameId) => {
     setCurrentGame(gameId)
-    setCurrentTestGame(null)
-  }
-
-  const handleSelectTestGame = (testGameId: TestGameId) => {
-    setCurrentTestGame(testGameId)
   }
 
   const handleBackToMenu = () => {
     setCurrentGame(null)
-    setCurrentTestGame(null)
-  }
-
-  const handleBackToTestGames = () => {
-    setCurrentTestGame(null)
-  }
-
-  // Если выбраны тестовые игры
-  if (currentGame === 'test-games') {
-    if (currentTestGame === null) {
-      return <TestGamesSelector onSelectGame={handleSelectTestGame} onBackToMenu={handleBackToMenu} />
-    }
-
-    switch (currentTestGame) {
-      case 'test1':
-        return <TestGame1 onBackToMenu={handleBackToTestGames} />
-      case 'test2':
-        return <TestGame2 onBackToMenu={handleBackToTestGames} />
-      case 'test3':
-        return <TestGame3 onBackToMenu={handleBackToTestGames} />
-      default:
-        return <TestGamesSelector onSelectGame={handleSelectTestGame} onBackToMenu={handleBackToMenu} />
-    }
   }
 
   if (currentGame === null) {

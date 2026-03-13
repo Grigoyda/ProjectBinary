@@ -1,4 +1,4 @@
-type GameId = 'binary-guessing' | 'game2' | 'game3' | 'game4' | 'game5' | 'game6' | 'test-games'
+type GameId = 'binary-guessing' | 'game2' | 'game3' | 'game4' | 'game5' | 'game6'
 
 interface GameSelectorProps {
   onSelectGame: (gameId: GameId) => void
@@ -11,7 +11,6 @@ const games = [
   { id: 'game4' as GameId, name: 'Сложение двоичных', description: 'Сложи два двоичных числа' },
   { id: 'game5' as GameId, name: 'Сравнение чисел', description: 'Определи, какое число больше' },
   { id: 'game6' as GameId, name: 'Операции в разных системах', description: '⚡ Повышенная сложность: операции с числами в разных системах' },
-  { id: 'test-games' as GameId, name: 'Тестовые игры', description: '' },
 ]
 
 export function GameSelector({ onSelectGame }: GameSelectorProps) {
@@ -32,7 +31,6 @@ export function GameSelector({ onSelectGame }: GameSelectorProps) {
             <button
               key={game.id}
               onClick={() => onSelectGame(game.id)}
-              disabled={game.id !== 'binary-guessing' && game.id !== 'game2' && game.id !== 'game3' && game.id !== 'game4' && game.id !== 'game5' && game.id !== 'game6' && game.id !== 'test-games'}
               className="p-6 rounded-lg border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-all text-left cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <h2 className="text-xl font-semibold mb-2">{game.name}</h2>

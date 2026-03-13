@@ -15,26 +15,26 @@ const games = [
 
 export function GameSelector({ onSelectGame }: GameSelectorProps) {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <div className="max-w-2xl w-full space-y-8 p-8 rounded-lg border border-border bg-card shadow-lg">
+    <div className="min-h-screen flex items-center justify-center bg-background p-2 sm:p-4">
+      <div className="max-w-2xl w-full space-y-4 sm:space-y-6 md:space-y-8 p-4 sm:p-6 md:p-8 rounded-lg border border-border bg-card shadow-lg">
         <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold text-foreground">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
             Игры про системы счисления
           </h1>
-          <p className="text-muted-foreground">
+          <p className="text-sm sm:text-base text-muted-foreground">
             Выберите игру для начала
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
           {games.map((game) => (
             <button
               key={game.id}
               onClick={() => onSelectGame(game.id)}
-              className="p-6 rounded-lg border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-all text-left cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-4 sm:p-5 md:p-6 rounded-lg border border-border bg-background hover:bg-accent hover:text-accent-foreground transition-all text-left cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <h2 className="text-xl font-semibold mb-2">{game.name}</h2>
-              <p className="text-sm text-muted-foreground">{game.description}</p>
+              <h2 className="text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2">{game.name}</h2>
+              <p className="text-xs sm:text-sm text-muted-foreground">{game.description}</p>
             </button>
           ))}
         </div>

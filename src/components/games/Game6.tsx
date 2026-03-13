@@ -169,57 +169,57 @@ export function Game6({ onBackToMenu }: Game6Props) {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <div className="max-w-2xl w-full space-y-8 p-8 rounded-lg border border-border bg-card shadow-lg">
+    <div className="min-h-screen flex items-center justify-center bg-background p-2 sm:p-4">
+      <div className="max-w-2xl w-full space-y-4 sm:space-y-6 md:space-y-8 p-4 sm:p-6 md:p-8 rounded-lg border border-border bg-card shadow-lg">
         {/* Заголовок и кнопка назад */}
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">
+        <div className="flex justify-between items-center gap-2">
+          <div className="min-w-0">
+            <h1 className="text-lg sm:text-2xl md:text-3xl font-bold text-foreground">
               Операции в разных системах
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               Выполни операцию с числами в разных системах счисления
             </p>
           </div>
-          <Button variant="outline" onClick={onBackToMenu}>
+          <Button variant="outline" onClick={onBackToMenu} className="shrink-0">
             Меню
           </Button>
         </div>
 
         {/* Счетчик */}
-        <div className="flex justify-center gap-4 text-sm">
-          <div className="px-4 py-2 rounded-md bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/50">
+        <div className="flex justify-center flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
+          <div className="px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/50">
             Правильно: <span className="font-bold">{score.correct}</span>
           </div>
-          <div className="px-4 py-2 rounded-md bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/50">
+          <div className="px-2 py-1 sm:px-4 sm:py-2 rounded-md bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/50">
             Неправильно: <span className="font-bold">{score.incorrect}</span>
           </div>
         </div>
 
         {/* Уровень сложности */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-orange-500/20 text-orange-600 dark:text-orange-400 border border-orange-500/50">
-            <span className="text-sm font-bold">⚡ Повышенная сложность</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md bg-orange-500/20 text-orange-600 dark:text-orange-400 border border-orange-500/50">
+            <span className="text-xs sm:text-sm font-bold">⚡ Повышенная сложность</span>
           </div>
         </div>
 
         {/* Выражение */}
-        <div className="text-center space-y-4">
-          <div className="space-y-4">
-            <div className="flex items-center justify-center gap-4 flex-wrap">
+        <div className="text-center space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
               <div className="text-center">
                 <p className="text-xs text-muted-foreground mb-1">
                   {getSystemName(system1)} система
                 </p>
-                <div className="text-4xl font-mono font-bold text-primary">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold text-primary">
                   {num1}
-                  <span className="text-lg text-muted-foreground ml-1">
+                  <span className="text-sm sm:text-lg text-muted-foreground ml-1">
                     {getSystemSymbol(system1)}
                   </span>
                 </div>
               </div>
 
-              <div className="text-4xl font-bold text-foreground">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
                 {getOperationSymbol()}
               </div>
 
@@ -227,28 +227,28 @@ export function Game6({ onBackToMenu }: Game6Props) {
                 <p className="text-xs text-muted-foreground mb-1">
                   {getSystemName(system2)} система
                 </p>
-                <div className="text-4xl font-mono font-bold text-primary">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold text-primary">
                   {num2}
-                  <span className="text-lg text-muted-foreground ml-1">
+                  <span className="text-sm sm:text-lg text-muted-foreground ml-1">
                     {getSystemSymbol(system2)}
                   </span>
                 </div>
               </div>
 
-              <div className="text-4xl font-bold text-foreground">=</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">=</div>
 
               <div className="text-center">
                 <p className="text-xs text-muted-foreground mb-1">
                   {getSystemName(resultSystem)} система
                 </p>
                 {!result ? (
-                  <div className="text-4xl font-mono font-bold text-primary min-w-[120px]">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold text-primary min-w-[60px] sm:min-w-[90px] md:min-w-[120px]">
                     ?
                   </div>
                 ) : (
-                  <div className="text-4xl font-mono font-bold text-primary">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-mono font-bold text-primary">
                     {correctAnswer}
-                    <span className="text-lg text-muted-foreground ml-1">
+                    <span className="text-sm sm:text-lg text-muted-foreground ml-1">
                       {getSystemSymbol(resultSystem)}
                     </span>
                   </div>
@@ -259,10 +259,10 @@ export function Game6({ onBackToMenu }: Game6Props) {
 
           {/* Поле ввода */}
           {!result && (
-            <div className="space-y-2 pt-4">
+            <div className="space-y-2 pt-2 sm:pt-4">
               <label
                 htmlFor="operation-input"
-                className="block text-sm font-medium text-foreground"
+                className="block text-xs sm:text-sm font-medium text-foreground"
               >
                 Введите результат в {getSystemName(resultSystem)} системе:
               </label>
@@ -273,7 +273,7 @@ export function Game6({ onBackToMenu }: Game6Props) {
                 onChange={(e) => handleInputChange(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder={`Например: ${resultSystem === 'hex' ? 'FF' : resultSystem === 'octal' ? '377' : resultSystem === 'binary' ? '11111111' : '255'}`}
-                className="w-full px-4 py-3 text-center text-2xl font-mono border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 uppercase"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 text-center text-xl sm:text-2xl font-mono border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 uppercase"
                 autoFocus
               />
               {resultSystem === 'hex' && (
@@ -286,9 +286,9 @@ export function Game6({ onBackToMenu }: Game6Props) {
 
           {/* Результат */}
           {result && (
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <div
-                className={`p-6 rounded-md border ${
+                className={`p-4 sm:p-5 md:p-6 rounded-md border ${
                   result === 'correct'
                     ? 'bg-green-500/20 text-green-600 dark:text-green-400 border-green-500/50'
                     : 'bg-red-500/20 text-red-600 dark:text-red-400 border-red-500/50'
@@ -296,19 +296,19 @@ export function Game6({ onBackToMenu }: Game6Props) {
               >
                 {result === 'correct' ? (
                   <div className="space-y-2">
-                    <p className="text-2xl font-bold">✓ Правильно!</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xl sm:text-2xl font-bold">✓ Правильно!</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">
                       Отличная работа! Вы справились со сложной задачей!
                     </p>
                   </div>
                 ) : (
                   <div className="space-y-2">
-                    <p className="text-2xl font-bold">✗ Неправильно</p>
-                    <p className="text-sm">
+                    <p className="text-xl sm:text-2xl font-bold">✗ Неправильно</p>
+                    <p className="text-xs sm:text-sm">
                       Твой ответ: <span className="font-mono font-bold">{userAnswer.toUpperCase()}</span>
                     </p>
-                    <p className="text-sm">
-                      Правильный ответ: <span className="font-mono font-bold text-lg">{correctAnswer}</span>
+                    <p className="text-xs sm:text-sm">
+                      Правильный ответ: <span className="font-mono font-bold text-base sm:text-lg">{correctAnswer}</span>
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
                       Подсказка: конвертируй оба числа в десятичную систему, выполни операцию, затем конвертируй результат в нужную систему

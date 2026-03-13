@@ -8,18 +8,13 @@ COPY package*.json .
 RUN npm ci
 
 COPY --chown=node:node . .
-RUN npm run build && npm prune --omit=dev
+RUN npm run build
 
 # Final run stage
-FROM node:lts-alpine
+FROM nginx:stable-alpine
 
-ENV NODE_ENV=production
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-USER node
-WORKDIR /app
+EXPOSE 80
 
-COPY --from=builder --chown=node:node /app/package*.json .
-COPY --from=builder --chown=node:node /app/node_modules/ ./node_modules
-COPY --from=builder --chown=node:node /app/dist/ ./dist
-
-CMD ["node", "dist/main.js"]
+CMD ["nginx", "-g", "daemon off;"]

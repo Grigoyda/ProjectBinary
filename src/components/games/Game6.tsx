@@ -199,7 +199,7 @@ export function Game6({ onBackToMenu }: Game6Props) {
         {/* Уровень сложности */}
         <div className="text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md bg-orange-500/20 text-orange-600 dark:text-orange-400 border border-orange-500/50">
-            <span className="text-xs sm:text-sm font-bold">⚡ Повышенная сложность</span>
+            <span className="text-xs sm:text-sm font-bold">Повышенная сложность</span>
           </div>
         </div>
 

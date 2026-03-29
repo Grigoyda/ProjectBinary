@@ -10,7 +10,7 @@ const games = [
   { id: 'game3' as GameId, name: 'Перевод кратных чисел', description: 'Конвертация между двоичной и 4/8/16-ричной' },
   { id: 'game4' as GameId, name: 'Сложение двоичных', description: 'Сложи два двоичных числа' },
   { id: 'game5' as GameId, name: 'Сравнение чисел', description: 'Определи, какое число больше' },
-  { id: 'game6' as GameId, name: 'Операции в разных системах', description: '⚡ Повышенная сложность: операции с числами в разных системах' },
+  { id: 'game6' as GameId, name: 'Операции в разных системах', description: 'Повышенная сложность: операции с числами в разных системах' },
 ]
 
 export function GameSelector({ onSelectGame }: GameSelectorProps) {
